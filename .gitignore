@@ -1,0 +1,6 @@
+*.o
+*.orig
+dwm/dwm
+st/st
+dmenu/dmenu
+slstatus/slstatus
