@@ -65,6 +65,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+	{ run_command, "Brightness %s%% ", "xbacklight -get | grep -o -P '^[0-9]{1,3}'"}, 
 	{ battery_perc, "BAT0: %s%%  ", 		"BAT0"},
 	{ battery_perc, "BAT1: %s%%  ", 		"BAT1"},
 	{ datetime, "%s",           "%F %T" },
