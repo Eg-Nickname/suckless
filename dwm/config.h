@@ -68,6 +68,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *screenshot[] = { "flameshot", "full", "-c", NULL };
+static const char *screenshot_select[] = { "flameshot", "gui", "-c", NULL };
 /*BACKLIGH CONTROLS*/
 static const char *br_up[]    = { "xbacklight", "-inc", "10%", NULL };
 static const char *br_down[]  = { "xbacklight", "-dec", "10%", NULL };
@@ -87,6 +89,9 @@ static const Key keys[] = {
   { 0, XF86XK_AudioMute,                     spawn,          {.v = vol_mute } },
   { 0, XF86XK_AudioRaiseVolume,              spawn,          {.v = vol_up } },
   { 0, XF86XK_AudioLowerVolume,              spawn,          {.v = vol_down } },
+  { 0,                            XK_Print,  spawn,          {.v = screenshot} },
+  { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot_select} },
+  /* dwm controls */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
