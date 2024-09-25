@@ -65,9 +65,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command, "Brightness %s%% ", "xbacklight -get | grep -o -P '^[0-9]{1,3}'"}, 
-  { run_command, "Vol %s ", "pactl get-sink-volume 0 | rg --only-matching -e '[0-9]{1,2}\%' |head -n 1"},
-  { battery_perc, "BAT0: %s%%  ", 		"BAT0"},
-	{ battery_perc, "BAT1: %s%%  ", 		"BAT1"},
-	{ datetime, "%s",           "%F %T" },
+	{ run_command, " 󰃟 %s%% ", "xbacklight -get | grep -o -P '^[0-9]{1,3}'"}, 
+  { run_command, "󰕾 %s ", "pactl get-sink-volume 0 | rg --only-matching -e '[0-9]{1,2}\%' |head -n 1"},
+  { battery_perc, "  %s%%  ", 		"BAT0"},
+	{ battery_perc, "  %s%%  ", 		"BAT1"},
+	{ datetime, "󰃭 %s",           "%F %T" },
 };
